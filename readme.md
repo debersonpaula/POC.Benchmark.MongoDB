@@ -36,10 +36,7 @@ All tests were did with the following specs:
 - .NET Core SDK=3.1.401
 - Job: .NET Core 3.1.7 (CoreCLR 4.700.20.36602, CoreFX 4.700.20.37001), X64 RyuJIT
 
-The database was filled with 5000 records, following the structure:
-
-- Person
-  - Orders
+The database was filled with 5000 records.
 
 <br />
 <br />
