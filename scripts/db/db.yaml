@@ -1,0 +1,27 @@
+version: "3"
+services:
+  mongodb1:
+    image: mongo
+    hostname: mongodb1
+    container_name: MongoDB.Benchmark.ByCollections
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: DB_BY_COLLECTIONS
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo-init1.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+  mongodb2:
+    image: mongo
+    hostname: mongodb2
+    container_name: MongoDB.Benchmark.ByDocuments
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: DB_BY_DOCUMENTS
+    ports:
+      - 27018:27017
+    volumes:
+      - ./mongo-init2.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    

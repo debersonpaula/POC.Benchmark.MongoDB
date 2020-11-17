@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="./DataBenchmarks"
+
+cd $DIR
+
+dotnet build -c Release --no-restore
+
+dotnet run -c Release --no-build

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CONFIG=$1
+
+if [ $# -eq 0 ]
+  then
+    echo "Nenhum comando fornecido."
+  else
+    echo 'Executando Script =' $1
+    ./scripts/$1/exec $2
+fi
