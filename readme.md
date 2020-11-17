@@ -63,3 +63,48 @@ The database was filled with 5000 records.
  **RunQuery** |   **5** |  **35.496 ms** | **3.2702 ms** |  **9.0617 ms** |  **32.491 ms** |  **23.401 ms** |  **62.750 ms** |     **160.38 KB** |
  **RunQuery** |  **10** |  **52.056 ms** | **3.0186 ms** |  **8.2634 ms** |  **50.693 ms** |  **41.974 ms** |  **80.358 ms** |     **318.21 KB** |
  **RunQuery** |  **50** | **205.224 ms** | **7.0504 ms** | **18.9404 ms** | **202.865 ms** | **165.776 ms** | **259.588 ms** |    **1581.17 KB** |
+
+<br />
+<br />
+<br />
+
+## Load Tests
+
+All load tests are doing with 1000~2000 requests, during ramp-up of 5s.
+Using JMeter with single-core (1GHz) and 1GB RAM.
+
+<br />
+<br />
+
+## Load test with User by Collections
+
+|	Test Sample	|	Qty/5s	|	Error %	|	TPS	|
+|	-------	|	-------	|	-------	|	-------	|
+|	Total	|	9000	|	0.00%	|	143.51	|
+|	Test Request 1	|	1000	|	0.00%	|	116.00	|
+|	Test Request 2	|	1200	|	0.00%	|	156.43	|
+|	Test Request 3	|	1400	|	0.00%	|	136.89	|
+|	Test Request 4	|	1600	|	0.00%	|	138.44	|
+|	Test Request 5	|	1800	|	0.00%	|	152.08	|
+|	Test Request 6	|	2000	|	0.00%	|	156.54	|
+
+<br />
+<br />
+
+## Load test with User by Documents
+
+|	Test Sample	|	Qty/5s	|	Error %	|	TPS	|
+|	-------	|	-------	|	-------	|	-------	|
+|	Total	|	9000	|	30.51%	|	94.67	|
+|	Test Request 1	|	1000	|	24.10%	|	54.10	|
+|	Test Request 2	|	1200	|	17.17%	|	96.24	|
+|	Test Request 3	|	1400	|	32.07%	|	104.05	|
+|	Test Request 4	|	1600	|	21.63%	|	100.25	|
+|	Test Request 5	|	1800	|	37.17%	|	105.53	|
+|	Test Request 6	|	2000	|	41.75%	|	113.48	|
+
+<br />
+<br />
+
+<h3>Important:</h3>
+Both cases are tested using simple MongoDB.Drive. In the second one, was used FindAsync method and it faced the exception "MongoWaitQueueFullException".

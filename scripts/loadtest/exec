@@ -1,0 +1,6 @@
+#!/bin/bash
+
+DIR="$(dirname "$0")"
+rm -rf $DIR/tmp
+rm -rf ./jmeter.log
+node ./$DIR/test.js
