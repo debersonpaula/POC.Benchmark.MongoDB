@@ -12,7 +12,7 @@ namespace DataApi.Repository
 
         public PersonDocumentRepository()
         {
-            _client = new MongoClient("mongodb://user:user@localhost:27018/DB_BY_DOCUMENTS");
+            _client = new MongoClient("mongodb://user:user@host.docker.internal:27018/DB_BY_DOCUMENTS");
             _database = _client.GetDatabase("DB_BY_DOCUMENTS");
         }
 

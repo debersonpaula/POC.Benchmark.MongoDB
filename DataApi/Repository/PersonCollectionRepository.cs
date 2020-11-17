@@ -13,7 +13,7 @@ namespace DataApi.Repository
 
         public PersonCollectionRepository()
         {
-            _client = new MongoClient("mongodb://user:user@localhost:27017/DB_BY_COLLECTIONS");
+            _client = new MongoClient("mongodb://user:user@host.docker.internal:27017/DB_BY_COLLECTIONS");
             _database = _client.GetDatabase("DB_BY_COLLECTIONS");
         }
 
