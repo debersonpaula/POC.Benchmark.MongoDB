@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function runCommand() {
+    cmd=$1
+    $cmd
+    status=$?
+    if [ ! $status -eq 0 ]; then
+        exit 1
+    fi
+}
+
+DIR="$(dirname "$0")"
+SERVICE_NAME="DataApi.Benchmark"
+IMAGE_NAME="${SERVICE_NAME,,}"
+DOCKERFILE="$DIR/Api.Dockerfile"
+PORT="4000"
+
+echo "Rebuild Image '$IMAGE_NAME'"
+runCommand "docker build --force-rm -f $DOCKERFILE -t $IMAGE_NAME ."
+
+echo "Removing curent container"
+docker container rm --force $SERVICE_NAME
+
+echo "Building container $SERVICE_NAME over port=$PORT"
+runCommand "docker create --name=$SERVICE_NAME --publish=$PORT:80 $IMAGE_NAME"
+
+echo "Running..."
+runCommand "docker container start $SERVICE_NAME"

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+dotnet restore --packages tmp/packages --interactive
+cd ./tmp
+tar -czf nuget-restore.tar.gz ./packages
