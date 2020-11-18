@@ -1,0 +1,34 @@
+[
+  {
+    "db": "DB_BY_COLLECTIONS",
+    "collections": 5000,
+    "views": 0,
+    "objects": 5000,
+    "avgObjSize": 606.4506,
+    "dataSize": 3032253.0,
+    "storageSize": 102400000.0,
+    "indexes": 5000,
+    "indexSize": 102400000.0,
+    "totalSize": 204800000.0,
+    "scaleFactor": 1.0,
+    "fsUsedSize": 49365127168.0,
+    "fsTotalSize": 67371577344.0,
+    "ok": 1.0
+  },
+  {
+    "db": "DB_BY_DOCUMENTS",
+    "collections": 1,
+    "views": 0,
+    "objects": 5000,
+    "avgObjSize": 606.4506,
+    "dataSize": 3032253.0,
+    "storageSize": 1286144.0,
+    "indexes": 1,
+    "indexSize": 139264.0,
+    "totalSize": 1425408.0,
+    "scaleFactor": 1.0,
+    "fsUsedSize": 49365131264.0,
+    "fsTotalSize": 67371577344.0,
+    "ok": 1.0
+  }
+]

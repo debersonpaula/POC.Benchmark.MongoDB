@@ -108,3 +108,28 @@ Using JMeter with single-core (1GHz) and 1GB RAM.
 
 <h3>Important:</h3>
 Both cases are tested using simple MongoDB.Drive. In the second one, was used FindAsync method and it faced the exception "MongoWaitQueueFullException".
+
+<br />
+<br />
+<br />
+
+## Disadvantages
+
+Despite the good performance of the tests directed by Collection against Documents, in the Collection base we faced the disk usage greater than Documents.
+
+Using db.stats() in each database, the _storageSize_, _indexSize_ and _totalSize_, are very increased for "DB_BY_COLLECTIONS".
+
+|	DB	|	 "DB_BY_COLLECTIONS", 	|	 "DB_BY_DOCUMENTS", 	|
+|--------------|	-------	|	-------	|
+|	collections	|	 5.000 	|	 1 	|
+|	views	|	 -   	|	 -   	|
+|	objects	|	 5.000 	|	 5.000 	|
+|	avgObjSize	|	 606,45 	|	 606,45 	|
+|	dataSize (MB)	|	 2,892 	|	 2,892 	|
+|	storageSize (MB)	|	 97,656 	|	 1,227 	|
+|	indexes	|	 5.000,00 	|	 1,00 	|
+|	indexSize (MB)	|	 97,656 	|	 0,133 	|
+|	totalSize (MB)	|	 195,313 	|	 1,359 	|
+|	scaleFactor	|	 1,00 	|	 1,00 	|
+|	fsUsedSize (GB)	|	 45,975 	|	 45,975 	|
+|	fsTotalSize (GB)	|	 62,745 	|	 62,745 	|
